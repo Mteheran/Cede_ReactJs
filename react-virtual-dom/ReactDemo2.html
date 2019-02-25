@@ -1,0 +1,39 @@
+﻿<html>
+<body>
+    <div id="app">
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/react@16.6.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+        const app = document.getElementById('app');
+
+        class MyComponent extends React.Component {
+
+            state = {
+            title:<h1>Hola Hola</h1>
+            };
+
+
+            changeTitle = () => {
+                let number1 = 0
+                number1++;
+            this.setState({ title : <h2>Hola Hola</h2>  });
+            };
+
+            render() {
+                return (
+                    <div>
+                        <div id="title">
+                            {this.state.title}
+                        </div>
+                        <button id="button" onClick={this.changeTitle}>cambiar estilo</button>
+                    </div>
+                    );
+                }
+        }
+
+        ReactDOM.render(<MyComponent />, app);
+    </script>
+</body>
+</html>

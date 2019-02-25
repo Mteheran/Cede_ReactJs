@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div>
+      <div>PROP: <span>hola soy un texto estático</span></div>
+      <div>ESTADO: <span id="clicks">0</span></div>
+      <button id="boton">click acá</button>
+    </div>
+    <script type="text/javascript">
+      const clicksElement = document.getElementById('clicks');
+      const boton = document.getElementById('boton');
+      console.log(clicksElement);
+      function cambiarClicks() {
+        let numeroClicks = parseInt(clicksElement.innerText);
+        console.log('numeroClicks', numeroClicks);
+        numeroClicks++;
+        clicksElement.innerText = numeroClicks.toString();
+      }
+      boton.onclick = cambiarClicks;
+    </script>
+  </body>
+</html>

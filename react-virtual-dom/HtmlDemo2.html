@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <div>    
+     <div id="title">
+         <h1>Hola Hola</h1>
+     </div>
+      <button id="button">cambiar estilo</button>
+    </div>
+    <script type="text/javascript">
+        const button = document.getElementById('button');
+        let title = document.getElementById('title');
+        function changestyle() {
+            var h2 = document.createElement('h2');
+            h2.textContent = "Hola hola";
+            title.innerHTML = h2.outerHTML;
+        }
+        button.onclick = changestyle;
+    </script>
+  </body>
+</html>

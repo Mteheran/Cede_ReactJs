@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .letra-color-azul {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/react@16.6.1/umd/react.development.js"
+    ></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+      const app = document.getElementById('app');
+
+      class Container extends React.Component {
+        state = {
+          clicks: 0
+        };
+        handleClick = () => {
+          let { clicks } = this.state;
+          clicks = clicks+1;
+          this.setState({ clicks });
+        };
+        render() {
+          return (
+            <div>
+              <div>PROP: {this.props.texto}</div>
+              <div>ESTADO: {this.state.clicks}</div>
+              <button onClick={this.handleClick}>click aqui</button>
+            </div>
+          );
+        }
+      }
+      const texto = 'hola soy el prop texto';
+      ReactDOM.render(<Container texto={texto} />, app);
+    </script>
+  </body>
+</html>
