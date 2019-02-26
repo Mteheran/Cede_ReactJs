@@ -14,7 +14,8 @@ const render = () => ReactDOM.render(
     <Counter
         value={store.getState()}
         onIncrement={() => store.dispatch(actions.incrementAction())}
-        onDecrement={() => store.dispatch(actions.decrementAction())}/>
+        onDecrement={() => store.dispatch(actions.decrementAction())}
+        onReset={() => store.dispatch(actions.resetAction())}/>
      , document.getElementById('root'));
 
 render();

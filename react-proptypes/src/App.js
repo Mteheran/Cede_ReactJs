@@ -6,13 +6,15 @@ import './App.css';
 class PropComponent extends Component {
   render(){
     return (
-      <h1>Hello, {this.props.name} {this.props.lastName}</h1>
+      <h1>Hello, {this.props.name} {this.props.lastName} - {this.props.year}</h1>
     )
   }
 }
 
 PropComponent.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
+  lastName: PropTypes.string.isRequired,
+  year: PropTypes.number
 };
 
 class App extends Component {
@@ -20,7 +22,7 @@ class App extends Component {
     return (
       <div>
         <h1>Prop-Types</h1>
-        <PropComponent name={true}/>
+        <PropComponent name={'Miguel'} lastName={true} year={'2019'} />
       </div>
     );
   }

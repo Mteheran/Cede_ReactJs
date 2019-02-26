@@ -11,3 +11,9 @@ export const decrementAction = () => {
         type: actionTypes.DECREMENT
     }
 }
+
+export const resetAction = () => {
+    return {
+        type: actionTypes.RESET
+    }
+}
